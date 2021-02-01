@@ -117,14 +117,12 @@ body {
 	floaf: left;
 	min-height: 100px;
 }
-.clearfix:after {
-	content: "";
-	display: block;
-	clear: both;
-}
+/* .clearfix:after { */
+	/* content: ""; */
+	/* display: block; */
+	/* clear: both; */
+/* } */
 .float-block {
 	floaf: left;
-}
-.width300 {
-	width: 300px;
+	max-width: 33%;
 }
