@@ -99,30 +99,25 @@ body {
 }
 .parentF1 {
 	background-color: #51e0d0;
-	floaf: left;
 	min-height: 100px;
 }
 .parentF2{
 	background-color: #36f760;
-	floaf: left;
 	min-height: 100px;
 }
 .parentF3 {
 	background-color: #39ebf7;
-	floaf: left;
 	min-height: 100px;
 }
 .parentF4 {
 	background-color: #bbf739;
-	floaf: left;
 	min-height: 100px;
 }
-/* .clearfix:after { */
-	/* content: ""; */
-	/* display: block; */
-	/* clear: both; */
-/* } */
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
 .float-block {
-	floaf: left;
-	max-width: 33%;
+	float: left;
 }
