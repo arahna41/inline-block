@@ -96,7 +96,7 @@ body {
 	font-size: 0;
 	display: inline-block;
 }
-.block{
+.block {
 	font-size: 16px;
 }
 .parent-block {
@@ -110,7 +110,7 @@ body {
 	background-color: #51e0d0;
 	min-height: 100px;
 }
-.parentF2{
+.parentF2 {
 	background-color: #36f760;
 	min-height: 100px;
 }
