@@ -59,6 +59,12 @@ a {
 	display: inline-block;
 	border: groove 2px #02cc53;
 	background-color: #83f2af;
+	transition: all 0.6s ease-in-out;
+}
+nav > a:hover {
+	color: #f25252;
+	background-color: #f2d852;
+	border: groove 2px #f7b045;
 }
 body {
 	text-align: center;
@@ -135,4 +141,49 @@ body {
 	justify-content: space-between;
 	padding: 2px;
 	align-items: center;
+}
+footer {
+	min-height: 200px;
+	margin: 50px;
+}
+ul {
+	font-size: 0;
+}
+ul > li {
+	font-size: 16px;
+	margin: 5px;
+	display: inline-block;
+}
+ul > li > a {
+	display: block;
+	width: 100px;
+	height: 98px;
+	background-image: url(../images/sprites.png);
+	padding: 0;
+	border: none;
+	transition: all 1s ease-in-out 0.25s;
+}
+.facebook {
+	background-position: 0 0;
+}
+.google {
+	background-position: -100px 0;
+}
+.youtube {
+	background-position: -200px 0;
+}
+.instagram {
+	background-position: -300px 0;
+}
+.facebook:hover {
+	background-position: 0 -98px;
+}
+.google:hover {
+	background-position: -100px -98px;
+}
+.youtube:hover {
+	background-position: -200px -98px;
+}
+.instagram:hover {
+	background-position: -300px -98px;
 }
