@@ -147,12 +147,15 @@ footer {
 	margin: 50px;
 }
 ul {
-	font-size: 0;
+	/* font-size: 0; */
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
 }
 ul > li {
 	font-size: 16px;
 	margin: 5px;
-	display: inline-block;
+	/* display: inline-block; */
 }
 ul > li > a {
 	display: block;
