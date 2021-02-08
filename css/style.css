@@ -147,21 +147,19 @@ footer {
 	margin: 50px;
 }
 ul {
-	/* font-size: 0; */
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
 }
 ul > li {
 	font-size: 16px;
-	margin: 5px;
-	/* display: inline-block; */
+	margin: 2px;
 }
 ul > li > a {
 	display: block;
-	width: 100px;
-	height: 98px;
-	background-image: url(../images/sprites.png);
+	width: 49px;
+	height: 49px;
+	background-image: url(../images/sprites1.png);
 	padding: 0;
 	border: none;
 	transition: all 1s ease-in-out 0.25s;
@@ -170,23 +168,23 @@ ul > li > a {
 	background-position: 0 0;
 }
 .google {
-	background-position: -100px 0;
+	background-position: -50px 0;
 }
 .youtube {
-	background-position: -200px 0;
+	background-position: -100px 0;
 }
 .instagram {
-	background-position: -300px 0;
+	background-position: -150px 0;
 }
 .facebook:hover {
-	background-position: 0 -98px;
+	background-position: 0 -49px;
 }
 .google:hover {
-	background-position: -100px -98px;
+	background-position: -50px -49px;
 }
 .youtube:hover {
-	background-position: -200px -98px;
+	background-position: -100px -49px;
 }
 .instagram:hover {
-	background-position: -300px -98px;
+	background-position: -150px -49px;
 }
