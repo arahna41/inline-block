@@ -79,7 +79,15 @@
 	}
 	nav > ul > li:last-child {
 		border-right: groove 1px #02cc53;
-	} 
+	}
+	/* nav > ul > li:after { */
+		/* position: absolute; */
+		/* top: 0; */
+		/* left: 0; */
+		/* width: 30px; */
+		/* height: 30px; */
+		/* background-color: red; */
+	/* } */
 	nav > ul > li > a {
 		padding: 10px;
 		padding-left: 35px;
@@ -124,7 +132,7 @@
 	.var2 {
 		position: absolute;
 		z-index: -5;
-		top: -50px;
+		top: -70px;
 	}
 	.var2parent:hover > .var2 {
 		z-index: 1;
