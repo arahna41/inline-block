@@ -44,7 +44,8 @@
 	}
 /* header */
 	header {
-		min-height: 70px;
+		height: 200px;
+		background: repeating-radial-gradient(closest-side circle at 7% 30%,  #20f5f5, #f1f520, #f520ee, #e1ff8f);
 	}
 	h1 {
 		display: inline-block;
@@ -52,25 +53,91 @@
 		color: #bf6a08;
 		background-color: #f5e493;
 		border: groove 3px #edcd2b;
-		margin: 10px;
+		margin: 40px 10px;
 		padding: 10px;
 	}
-	a {
-		margin:10px;
-		padding: 7px;
-		display: inline-block;
-		border: groove 2px #02cc53;
-		background-color: #83f2af;
-		transition: all 0.6s ease-in-out;
+	/* Навигация */
+	nav {
+		font-size: 0;
 	}
-	nav > a:hover {
+	nav > ul {
+		width: 100%;
+		font-size: 0;
+		background: linear-gradient(#83f2af, #0f9152);
+		position: relative;
+		bottom: -32px;
+	}
+	nav > ul > li {
+		font-size: 20px;
+		display: inline-block;
+		border-right: groove 1px #02cc53;
+		background: linear-gradient(#83f2af, #0f9152);
+		position: relative;
+	}
+	nav > ul > li:first-child {
+		border-left: groove 1px #02cc53;
+	}
+	nav > ul > li:last-child {
+		border-right: groove 1px #02cc53;
+	} 
+	nav > ul > li > a {
+		padding: 10px;
+		padding-left: 35px;
+		color: #1877ad;
+		text-decoration: none;
+		display: block;
+	}
+	nav > ul > li > a:hover {
 		color: #f25252;
 		background-color: #f2d852;
-		border: groove 2px #f7b045;
+		box-shadow: 3px 5px 10px -5px black;
+		transition: all 0.6s ease-in-out;
 	}
+	.submenu1 {
+		position: absolute;
+		min-width: 100%;
+	}
+	.submenu1 > li {
+		border: groove 1px #f7b045;
+	}
+	.submenu1 > li > a {
+		display: block;
+		padding: 10px;
+		padding-left: 35px;
+		color: #c45829;
+		background-color: #35de8c;
+		text-decoration: none;
+		box-shadow: 3px 5px 10px -5px black;
+	}
+	.submenu1 > li > a:hover {
+		color: #f25252;
+		background-color: #88c6eb;
+		box-shadow: 3px 5px 10px -5px black;
+		transition: all 0.6s ease-in-out;
+	}
+	.disp {
+		display: none;
+	}
+	.disp1:hover > .disp {
+		display: block;
+	}	
+	.var2 {
+		position: absolute;
+		z-index: -5;
+		top: -50px;
+	}
+	.var2parent:hover > .var2 {
+		z-index: 1;
+		top: 39px;
+		transition: all 0.6s ease;
+	}
+		
 /* body */
 	body {
 		text-align: center;
+	}
+	main {
+		padding-top: 70px;
 	}
 /* width */
 	.width33 {
@@ -155,16 +222,16 @@
 		margin: 50px;
 	}
 /* social_menu */
-	ul {
+	.socialmenu {
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
 	}
-	ul > li {
+	.socialmenu > li {
 		font-size: 16px;
-		margin: 2px;
+		margin: 3px;
 	}
-	ul > li > a {
+	.socialmenu > li > a {
 		display: block;
 		width: 49px;
 		height: 49px;
