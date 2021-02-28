@@ -80,14 +80,6 @@
 	nav > ul > li:last-child {
 		border-right: groove 1px #02cc53;
 	}
-	/* nav > ul > li:after { */
-		/* position: absolute; */
-		/* top: 0; */
-		/* left: 0; */
-		/* width: 30px; */
-		/* height: 30px; */
-		/* background-color: red; */
-	/* } */
 	nav > ul > li > a {
 		padding: 10px;
 		padding-left: 35px;
@@ -139,7 +131,103 @@
 		top: 39px;
 		transition: all 0.6s ease;
 	}
-		
+	.home, .blocks, .magnifier, .contact {
+		position: relative;
+	}
+	.home:before {
+		content: " ";
+		position: absolute;
+		top: 13px;
+		left: 9px;
+		width: 12px;
+		height: 9px;
+		background-color: transparent;
+		border: solid 3px #777d7a;
+	}
+	.home:after {
+		content: " ";
+		position: absolute;
+		top: 2px;
+		left: 8px;
+		width: 0;
+		height: 0;
+		border-bottom: solid 10px #777D79;
+		border-left: solid 10px transparent;
+		border-right: solid 10px transparent;
+	}
+	.blocks:before {
+		content: " ";
+		position: absolute;
+		top: 18px;
+		left: 9px;
+		width: 20px;
+		height: 10px;
+		background-color: #777d7a;
+	}
+	.blocks:after {
+		content: " ";
+		position: absolute;
+		top: 8px;
+		left: 9px;
+		width: 10px;
+		height: 10px;
+		background-color: #777D79;
+	}
+	.blocks2:before {
+		content: " ";
+		position: absolute;
+		top: 4px;
+		left: 21px;
+		width: 8px;
+		height: 8px;
+		background-color: transparent;
+		border: solid 2px #777d7a;
+	}
+	.contact:before {
+		content: " ";
+		position: absolute;
+		top: 8px;
+		left: 4px;
+		width: 21px;
+		height: 12px;
+		background-color: transparent;
+		border: solid 3px #777d7a;
+		border-radius: 17%;
+	}
+	.contact:after {
+		content: " ";
+		position: absolute;
+	    top: 22px;
+		left: 15px;
+		width: 0px;
+		height: 0px;
+		border-bottom: solid 8px #777D78;
+		border-left: solid 8px transparent;
+		border-right: solid 8px transparent;
+		transform: rotate(45deg);
+	}
+	.magnifier:before {
+		content: " ";
+		position: absolute;
+		top: 5px;
+		left: 2px;
+		width: 16px;
+		height: 16px;
+		background-color: transparent;
+		border: solid 3px #777d7a;
+		border-radius: 50%;
+	}
+	.magnifier:after {
+		content: " ";
+		position: absolute;
+		top: 25px;
+		left: 17px;
+		width: 15px;
+		height: 5px;
+		background-color: #777d7a;
+		transform: rotate(45deg);
+	}
+	
 /* body */
 	body {
 		text-align: center;
