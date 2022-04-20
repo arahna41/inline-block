@@ -23,41 +23,46 @@
 # `git push --delete origin main`
 
 
-protected_branch_1='master'
-protected_branch_2='main'
+protected_branches=( production maim )
+for i in "${protected_branches[@]}"
+do
 
-policy="\n\n[Policy] Never push code directly to the "$protected_branch_1" and "$protected_branch_2" branch! (Prevented with pre-push hook.)\n\n"
+    protected_branch=$i
 
-current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+    policy='[Policy] Never push, force push or delete the '$protected_branch' branch! (Prevented with pre-push hook.)'
 
-push_command=$(ps -ocommand= -p $PPID)
+    current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
-is_destructive='force|delete|\-f'
+    push_command=$(ps -ocommand= -p $PPID)
 
-will_remove_protected_branch_1=':'$protected_branch_1
-will_remove_protected_branch_2=':'$protected_branch_2
+    is_destructive='force|delete|\-f'
 
-do_exit(){
-  echo -e $policy
-  exit 1
-}
+    will_remove_protected_branch=':'$protected_branch
 
-if [[ $push_command =~ $is_destructive ]] && [ $current_branch = $protected_branch_1 ] || [[ $push_command =~ $is_destructive ]] && [ $current_branch = $protected_branch_2 ]; then
-  do_exit
-fi
+    do_exit(){
+      echo $policy
+      exit 1
+    }
 
-if [[ $push_command =~ $is_destructive ]] && [[ $push_command =~ $protected_branch_1 ]] || [[ $push_command =~ $is_destructive ]] && [[ $push_command =~ $protected_branch_2 ]]; then
-  do_exit
-fi
+    if [[ $push_command =~ $is_destructive ]] && [ $current_branch = $protected_branch ]; then
+      do_exit
+    fi
 
-if [[ $push_command =~ $will_remove_protected_branch_1 ]] || [[ $push_command =~ $will_remove_protected_branch_2 ]]; then
-  do_exit
-fi
+    if [[ $push_command =~ $is_destructive ]] && [[ $push_command =~ $protected_branch ]]; then
+      do_exit
+    fi
 
-# Prevent ALL pushes to protected_branch
-if [[ $push_command =~ $protected_branch_1 ]] || [ $current_branch = $protected_branch_1 ] || [[ $push_command =~ $protected_branch_2 ]] || [ $current_branch = $protected_branch_2 ]; then
-  do_exit
-fi
+    if [[ $push_command =~ $will_remove_protected_branch ]]; then
+      do_exit
+    fi
+
+    # This check makes sure that you dont make a *git push* while on master
+    # This check is very strict so you might want to consider removeing it if it does not fit your purpose
+    if [[ $protected_branch == $current_branch ]]; then
+      do_exit
+    fi
+
+done
 
 unset do_exit
 
