@@ -28,7 +28,7 @@ protected_branch_2='main'
 
 policy="\n\n[Policy] Never push code directly to the "$protected_branch_1" and "$protected_branch_2" branch! (Prevented with pre-push hook.)\n\n"
 
-current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+current_branch=$(git branch --show-current)
 
 push_command=$(ps -ocommand= -p $PPID)
 
@@ -41,18 +41,6 @@ do_exit(){
   echo -e $policy
   exit 1
 }
-
-if [[ $push_command =~ $is_destructive ]] && [ $current_branch = $protected_branch_1 ] || [[ $push_command =~ $is_destructive ]] && [ $current_branch = $protected_branch_2 ]; then
-  do_exit
-fi
-
-if [[ $push_command =~ $is_destructive ]] && [[ $push_command =~ $protected_branch_1 ]] || [[ $push_command =~ $is_destructive ]] && [[ $push_command =~ $protected_branch_2 ]]; then
-  do_exit
-fi
-
-if [[ $push_command =~ $will_remove_protected_branch_1 ]] || [[ $push_command =~ $will_remove_protected_branch_2 ]]; then
-  do_exit
-fi
 
 # Prevent ALL pushes to protected_branch
 if [[ $push_command =~ $protected_branch_1 ]] || [ $current_branch = $protected_branch_1 ] || [[ $push_command =~ $protected_branch_2 ]] || [ $current_branch = $protected_branch_2 ]; then
